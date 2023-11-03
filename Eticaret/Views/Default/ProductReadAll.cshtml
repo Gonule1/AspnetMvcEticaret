@@ -1,0 +1,145 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Product>
+@{
+    ViewData["Title"] = "ProductReadAll";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<!-- Breadcrumb Begin -->
+<div class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__links">
+                    <a href="./index.html"><i class="fa fa-home"></i> Anasayfa</a>
+                    <span>Ürün Detay</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Product Details Section Begin -->
+<section class="product-details spad">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="product__details__pic">
+                        <div class="product__details__pic__left product__thumb nice-scroll">
+                            <a class="pt active" href="#product-1">
+                                <img src="@item.Image" alt="">
+                            </a>
+                            <a class="pt" href="#product-2">
+                                <img src="@item.Image" alt="">
+                            </a>
+                            <a class="pt" href="#product-3">
+                                <img src="@item.Image" alt="">
+                            </a>
+                            <a class="pt" href="#product-4">
+                                <img src="@item.Image" alt="">
+                            </a>
+                        </div>
+                        <div class="product__details__slider__content">
+                            <div class="product__details__pic__slider owl-carousel">
+                                <img data-hash="product-1" class="product__big__img" src="@item.Image" alt="">
+                                <img data-hash="product-2" class="product__big__img" src="@item.Image" alt="">
+                                <img data-hash="product-3" class="product__big__img" src="@item.Image" alt="">
+                                <img data-hash="product-4" class="product__big__img" src="@item.Image" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="product__details__text">
+                        <h3><span>@item.Name</span></h3>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <span>( 138 görüntülenme )</span>
+                        </div>
+                        <div class="product__details__price">@item.Price ₺ </div>
+                        <p>
+                            @item.Description
+                        </p>
+                        <div class="product__details__button">
+                            <div class="quantity">
+                                <span>Adet:</span>
+                                <div class="pro-qty">
+                                    <input type="text" value="1">
+                                </div>
+                            </div>
+                            <a href="#" class="cart-btn"><span class="icon_bag_alt"></span> Sepete Ekle</a>
+                            <ul>
+                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                                <li><a href="#"><span class="icon_adjust-horiz"></span></a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Açıklama</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Yorumlar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Yorum Yap</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <h6>Açıklama</h6>
+                                <p>
+                                    @item.Description
+                                </p>
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <h6>Yorumlar</h6>
+                                <table class="table table-bordered">
+                                    <tr class="media-list">
+                                        <ul>
+                                            <li class="media-left" style="border-radius:10px;">
+                                                <a href="">
+                                                    <img class="media-object img-circle img-thumbnail" style="width:64px;" src="/ashion-master/img/discount.jpg">
+                                                </a>
+                                            </li>
+                                            <li class="media-body" style="margin-left:70px; margin-top:-60px;">
+                                                <h4 class="media-heading">Gönül Elmalı</h4>
+                                                <p style="margin-left:10px; width:700px;">Deneme</p>
+                                                <p><b>Yorum Tarihi:</b> 02.11.2023</p>
+                                            </li>
+                                        </ul>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                <h6>Yorum Yap</h6>
+                                <form action="/Home/Comment" method="post">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="KullaniciAdi" placeholder="Kullanıcı Adı">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="5" name="Yorum" placeholder="Yorum.."></textarea>
+                                    </div>
+                                    <input type="submit" value="Gönder" class="btn btn-primary" />
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<!-- Product Details Section End -->
