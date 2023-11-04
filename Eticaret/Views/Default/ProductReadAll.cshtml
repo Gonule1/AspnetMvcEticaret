@@ -22,38 +22,37 @@
 <!-- Product Details Section Begin -->
 <section class="product-details spad">
     <div class="container">
-        @foreach (var item in Model)
-        {
+      
             <div class="row">
                 <div class="col-lg-6">
                     <div class="product__details__pic">
                         <div class="product__details__pic__left product__thumb nice-scroll">
                             <a class="pt active" href="#product-1">
-                                <img src="@item.Image" alt="">
+                                <img src="/ashion-master/img/product/product-1.jpg" alt="">
                             </a>
                             <a class="pt" href="#product-2">
-                                <img src="@item.Image" alt="">
+                                <img src="/ashion-master/img/product/product-2.jpg " alt="">
                             </a>
                             <a class="pt" href="#product-3">
-                                <img src="@item.Image" alt="">
+                                <img src="/ashion-master/img/product/product-3.jpg" alt="">
                             </a>
                             <a class="pt" href="#product-4">
-                                <img src="@item.Image" alt="">
+                                <img src="/ashion-master/img/product/product-4.jpg" alt="">
                             </a>
                         </div>
                         <div class="product__details__slider__content">
                             <div class="product__details__pic__slider owl-carousel">
-                                <img data-hash="product-1" class="product__big__img" src="@item.Image" alt="">
-                                <img data-hash="product-2" class="product__big__img" src="@item.Image" alt="">
-                                <img data-hash="product-3" class="product__big__img" src="@item.Image" alt="">
-                                <img data-hash="product-4" class="product__big__img" src="@item.Image" alt="">
+                                <img data-hash="product-1" class="product__big__img" src="/ashion-master/img/product/product-1.jpg" alt="">
+                                <img data-hash="product-2" class="product__big__img" src="/ashion-master/img/product/product-2.jpg" alt="">
+                                <img data-hash="product-3" class="product__big__img" src="/ashion-master/img/product/product-3.jpg" alt="">
+                                <img data-hash="product-4" class="product__big__img" src="/ashion-master/img/product/product-4.jpg" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="product__details__text">
-                        <h3><span>@item.Name</span></h3>
+                        <h3><span></span></h3>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -62,9 +61,10 @@
                             <i class="fa fa-star"></i>
                             <span>( 138 görüntülenme )</span>
                         </div>
-                        <div class="product__details__price">@item.Price ₺ </div>
+                        <div class="product__details__price"> 550₺ </div>
                         <p>
-                            @item.Description
+                        Fırfırlı uzun kollu, V yaka, dökümlü yarı transparan bluz. 
+                        Altı fırfır detaylı ve önden bağcıklı. Farklı renk seçenekleri mevcut.
                         </p>
                         <div class="product__details__button">
                             <div class="quantity">
@@ -99,7 +99,7 @@
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <h6>Açıklama</h6>
                                 <p>
-                                    @item.Description
+                                   Çok güzel kesinlikle alınnn
                                 </p>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
@@ -139,7 +139,7 @@
                     </div>
                 </div>
             </div>
-        }
+        
     </div>
 </section>
 <!-- Product Details Section End -->

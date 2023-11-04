@@ -12,9 +12,9 @@ namespace Eticaret.Controllers
        var values = productManager.TGetList();
             return View(values);
         }
-        public ActionResult ProductReadAll(int id)
+        public ActionResult ProductReadAll(int Id)
         {
-            var values= productManager.GetProductById(id);
+            var values= productManager.GetProductById(Id);
             return View(values);
         }
         public PartialViewResult HeaderPartial()
@@ -25,5 +25,6 @@ namespace Eticaret.Controllers
         {
             return PartialView();
         }
+
     }
 }
