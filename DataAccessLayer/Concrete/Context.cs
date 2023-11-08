@@ -23,5 +23,6 @@ public class Context: DbContext
     public DbSet<OrderLine> OrderLines  { get; set; }
     public DbSet<Pay> Pays { get; set; }
     public DbSet<Product> Products { get; set; }
+    public DbSet<Cart> Carts { get; set; }
 
 }
