@@ -13,5 +13,6 @@ namespace EntityLayer.Concrete
         public int Price { get; set; }
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
+        public string ProductImage { get; set; }
     }
 }

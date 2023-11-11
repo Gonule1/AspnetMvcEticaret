@@ -34,6 +34,11 @@ namespace BusiniessLayer.Concrete
             _cartDal.Delete(t);
         }
 
+        public void TDelete(Product cart)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Cart> TGetList()
         {
             return _cartDal.GetList();

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Address>
+@{
+    ViewData["Title"] = "AddressList";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="span9">
+
+
+    <h2>Adres Seçimi</h2>
+
+    <p>
+        <img src="~/ashion-master/img/evicon.jpg" width="25" height="25" />@Html.ActionLink("Yeni Adres Ekle", "CreateAddress")
+    </p>
+    <table class="table table-hover">
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayName("Adres Başlığı")
+            </th>
+            <th>
+                @Html.DisplayName("Adres")
+            </th>
+            <th>
+                @Html.DisplayName("İl")
+            </th>
+            <th>
+                @Html.DisplayName("İlçe")
+            </th>
+            <th>
+                @Html.DisplayName("Mahalle")
+            </th>
+            <th>
+                @Html.DisplayName("Posta Kodu")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/web/img/evicon.jpg" width="25" height="25" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddressTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddressDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.The)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.District)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Neighbourhood)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostCode)
+                </td>
+                <td>
+                    <a href="/Cart/DeleteAddress/@item.AddressId" class="btn btn-danger">Sil</a>
+                    <a href="/Cart/PayList/@item.AddressId" class="btn btn-success">Adres Seç <i class="icon-arrow-right"></i></a>
+                </td>
+            </tr>
+        }
+    </table>
+
+
+
+
+
+
+
+
